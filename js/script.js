@@ -47,10 +47,14 @@ $(document).on('input', '#scrollbar__input', function() {
 });
 // end
 
-// input type file - 
+// input type file - adding the logic of a standard element
 $('.file input[type=file]').on('change', function(){
 	const file = this.files[0];
 	$('#file__value').html(file.name);
     $('.file label').addClass('valid');
 });
+// end
+
+// aos libs init
+AOS.init();
 // end
