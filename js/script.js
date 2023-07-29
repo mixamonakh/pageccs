@@ -31,6 +31,17 @@ buttonScrollTop.on("click", function () {
 });
 // end
 
+// slow scroll to section
+$('a').on("click", function () {
+    const getHref = $(this).attr('href')
+    $("html, body").animate({
+        scrollTop: $(getHref).offset().top
+    });
+
+    return false;
+});
+// end
+
 // libs select2 init
     $(document).ready(function() {
         $('.js-example-basic-single').select2({
@@ -47,14 +58,10 @@ $(document).on('input', '#scrollbar__input', function() {
 });
 // end
 
-// input type file - adding the logic of a standard element
+// input type file - 
 $('.file input[type=file]').on('change', function(){
 	const file = this.files[0];
 	$('#file__value').html(file.name);
     $('.file label').addClass('valid');
 });
-// end
-
-// aos libs init
-AOS.init();
 // end
